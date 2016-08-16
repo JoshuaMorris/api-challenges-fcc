@@ -1,37 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Timestamp Microservice</title>
-    <meta name="description" content="Timestamp Microservice by Joshua Morris @FCC">
-    <link id="favicon" rel="icon" href="https://cdn.hyperdev.com/us-east-1%3A0a4e8a58-6885-4472-841d-6d28e8d3f9cf%2Ffavicon.ico" type="image/x-icon">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <header>
-      <h1>
-        Timestamp Microservice
-      </h1>
-    </header>
-
-    <main>
-        <h2>User Stories: </h2>
-        <ul>
-            <li>I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: September 22, 2016).</li>
-            <li>If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
-            <li>If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
-        </ul>
-
-        <h3>Example usage:</h3>
-        <pre><code>http://timestamp-ms-jm.herokuapp.com/September%2022,%202016
-http://timestamp-ms-jm.herokuapp.com/1474502400</code></pre>
-
-        <h3>Example output:</h3>
-
-        <pre><code>{"unix":"1474502400","natural":"September 22, 2016"}</code></pre>
-    </main>
-
-    <footer></footer>
-  </body>
-</html>
+doctype html
+html(lang="en")
+  head
+    title=title
+    meta(name="description", content="Timestamp Microservice by Joshua Morris @FCC")
+    link(id="favicon", rel="icon", href="https://cdn.hyperdev.com/us-east-1%3A0a4e8a58-6885-4472-841d-6d28e8d3f9cf%2Ffavicon.ico", type="image/x-icon")
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(href="style.css", media="all", rel="stylesheet")
+  
+  body(class="markdown-body")!= md('README.md')

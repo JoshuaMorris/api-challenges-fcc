@@ -1,10 +1,21 @@
 var express = require('express'),
     helmet = require('helmet'),
     moment = require('moment'),
+    marked = require('marked'),
+    fs = require('fs'),
     app = express(),
     port = process.env.PORT || 8080;
     
+var md = function(filename) {
+    var path = __dirname + '/' + filename,
+        include = fs.readFileSync(__dirname + '/README.md', 'utf8'),
+        html = marked(include);
+
+    return html;
+};
+    
 app.use(helmet());
+app.set('view engine', 'pug');
 app.use(express.static('public'));
     
 app.get('/:incoming', function(req, res) {
@@ -33,7 +44,7 @@ app.get('/:incoming', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/views/index.html');
+    res.render('index', {title: 'Timestamp Microservice', md: md});
 });
 
 app.use(function(err, req, res, next) {
