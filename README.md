@@ -15,3 +15,6 @@ http://timestamp-ms-jm.herokuapp.com/1474502400
 ```
 {"unix":"1474502400","natural":"September 22, 2016"}
 ```
+
+## License
+[MIT](LICENSE)

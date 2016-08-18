@@ -13,6 +13,10 @@ app.use(helmet());
 app.set('view engine', 'pug');
 app.use(express.static('public'));
     
+app.get('/LICENSE', function(req, res) {
+    res.render('license', {title: 'Timestamp Microservice', md: md});
+});    
+    
 app.get('/:incoming', function(req, res) {
     var timestamp = req.params.incoming,
         returnDates = { 
